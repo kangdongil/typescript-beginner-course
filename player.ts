@@ -1,5 +1,5 @@
 type Player = {
-    name: string,
+    readonly name: string,
     age?: number,
 }
 
@@ -24,4 +24,7 @@ function playerMaker(name:string) : Player {
 
 const nico = playerMaker("nico")
 nico.age = 12
-console.log(nico)
+// nico.name = "las" <- Error caused by Read-only Type
+
+const player: [string, number, boolean] = ["nico", 1, true]
+// assign array item's length, types, sequence
