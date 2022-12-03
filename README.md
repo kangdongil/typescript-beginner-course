@@ -114,9 +114,11 @@ const player: [string, number, boolean] = ["nico", 1, true]
   - `private`: class 밖은 물론 extend한 class들도 사용할 수 없다
   - `protected`: class 밖은 제한하되 extend한 class들은 접근할 수 있다
 - class나 method 모두 `abstract`을 맨 앞에 사용하면 javascript에 드러나지 않도록 정의할 수 있다
+- abstract class는 표준화된 blueprint을 제공하기 위해 만들어진다
 - `[key]`: key값이 정의되지 않았을 때 사용할 수 있다
 - class를 type처럼 사용할 수 있다
 
 ## 0.6 Interface
 - type의 여러 기능 중 object의 형태를 규정하는 기능만 가능함
 - interface들을 extends하거나 중복 호출하면서 property를 누적시킬 수 있다
+- Class의 형태도 규정할 수 있다. 

@@ -1,23 +1,67 @@
-type Nickname = string
-type Team = "red" | "blue" | "yellow"
+interface Person {
+    firstName: string,
+    lastName: string,
+    sayHi(name:string): string,
+    fullName():string
+}
 
-interface Player {
-    nickname: Nickname
-    healthBar: number
-    team: Team
+interface Human {
+    health:number
 }
 /*
-type Player = {
-    nickname: Nickname,
-    healthBar: number,
-    team: Team
+abstract class Person {
+    constructor(
+        protected firstName:string,
+        protected lastName:string
+    ) {}
+    abstract sayHi(name:string):string
+    abstract fullName():string
 }
 */
-const noru: Player = {
-    nickname: "nico",
-    healthBar: 10,
-    team: "blue"
+
+class Payer implements Person, Human {
+    constructor(
+        public firstName:string,
+        public lastName:string,
+        public health:number,
+    ){}
+    fullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+    sayHi(name:string){
+        return `Hello ${name}. My name is ${this.fullName()}`
+    }
 }
 
-type Food = string;
-const kimuchi:Food = "delicious"
+/*
+class Payer extends Person {
+    fullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
+    sayHi(name:string) {
+        return `Hello ${name}. My name is ${this.fullName()}`
+    }
+}
+*/
+
+/*
+function makeUser(user: Person) {
+    return "hi"
+}
+
+makeUser({
+    firstName: "nico",
+    lastName: "las",
+    fullName: () => "xx",
+    sayHi: (name) => "string",
+})
+*/
+
+function makeUser(user: Person): Person {
+    return {
+        firstName: "nico",
+        lastName: "las",
+        fullName: () => "xx",
+        sayHi: (name) => "string",
+    }
+}
