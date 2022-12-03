@@ -107,3 +107,10 @@ const player: [string, number, boolean] = ["nico", 1, true]
 ## 0.4.3 Generics
 - 제너릭을 사용해서 직접 call signature를 만들 일은 거의 없어
 - 남들이 만든 제너릭을 끌어다 쓰는 게 다반사다
+
+## 0.5 Class
+- class constructor의 item들에 type을 지정해줄 수 있다.
+  - `public`: class 밖에서 호출할 수 있다(default)
+  - `private`: class 밖은 물론 extend한 class들도 사용할 수 없다
+  - `protected`: class 밖은 제한하되 extend한 class들은 접근할 수 있다
+- class나 method 모두 `abstract`을 맨 앞에 사용하면 javascript에 드러나지 않도록 정의할 수 있다
