@@ -1,33 +1,23 @@
-type Player<E> = {
-    name:string
-    extraInfo:E
-}
-type NicoExtra = {
-    favFood:string
-}
-type NicoPlayer = Player<NicoExtra>
-//type NicoPlayer = Player<{favFood:string}>
+type Nickname = string
+type Team = "red" | "blue" | "yellow"
 
-const nico: NicoPlayer = {
-    name: "nico",
-    extraInfo: {
-        favFood: "kimchi"
-    }
+interface Player {
+    nickname: Nickname
+    healthBar: number
+    team: Team
 }
-
-const lynn: Player<null> = {
-    name: "lynn",
-    extraInfo:null,
+/*
+type Player = {
+    nickname: Nickname,
+    healthBar: number,
+    team: Team
 }
-
-// Generics Form3
-type Arr = Array<number>
-let arr:Arr = [1,2,3,4]
-
-// function printAllNumbers(arr: number[]) {...}
-function printAllNumbers(arr: Array<number>) {
-    
+*/
+const noru: Player = {
+    nickname: "nico",
+    healthBar: 10,
+    team: "blue"
 }
 
-//React useState with Generics
-`useState<number>()`
+type Food = string;
+const kimuchi:Food = "delicious"
