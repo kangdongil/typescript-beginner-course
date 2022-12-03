@@ -1,30 +1,33 @@
-type Player = {
-    readonly name: string,
-    age?: number,
+type Player<E> = {
+    name:string
+    extraInfo:E
 }
+type NicoExtra = {
+    favFood:string
+}
+type NicoPlayer = Player<NicoExtra>
+//type NicoPlayer = Player<{favFood:string}>
 
-const playerNico : Player = {
+const nico: NicoPlayer = {
     name: "nico",
-}
-
-const playerLynn : Player = {
-    name: "lynn",
-    age: 12,
-}
-
-const playerMaker = (name:string) : Player => ({name})
-
-/*
-function playerMaker(name:string) : Player {
-    return {
-        name,
+    extraInfo: {
+        favFood: "kimchi"
     }
 }
-*/
 
-const nico = playerMaker("nico")
-nico.age = 12
-// nico.name = "las" <- Error caused by Read-only Type
+const lynn: Player<null> = {
+    name: "lynn",
+    extraInfo:null,
+}
 
-const player: [string, number, boolean] = ["nico", 1, true]
-// assign array item's length, types, sequence
+// Generics Form3
+type Arr = Array<number>
+let arr:Arr = [1,2,3,4]
+
+// function printAllNumbers(arr: number[]) {...}
+function printAllNumbers(arr: Array<number>) {
+    
+}
+
+//React useState with Generics
+`useState<number>()`

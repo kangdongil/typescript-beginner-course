@@ -105,3 +105,5 @@ const player: [string, number, boolean] = ["nico", 1, true]
   type SuperPrint = <T,M>(a: T[], b: M) => T
   ```
 ## 0.4.3 Generics
+- 제너릭을 사용해서 직접 call signature를 만들 일은 거의 없어
+- 남들이 만든 제너릭을 끌어다 쓰는 게 다반사다
