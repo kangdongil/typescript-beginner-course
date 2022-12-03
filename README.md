@@ -87,4 +87,21 @@ const player: [string, number, boolean] = ["nico", 1, true]
   ```
 
 ## 0.4.2 Polymorphism
+- Concrete Type: TypeScript에서 제공하는 고유 타입들
+  - number, boolean, string
+- 예를 들어 다양한 타입을 받는 Array가 있다면 Concrete Type만을 사용한다면 가능한 모든 경우의 수를 작성해야 할 것이다
+- 이 때 Generic Type을 사용할 수 있다
+- Generic Type: 어떠한 형태로 데이터를 받는지는 유지하면서 변수칸을 두어 어떠한 타입을 받을 수 있다.(`any`와 다른 점)
+  ```typescript
+  type SuperPrint = <T>(a: T[]) => T
+  ```
+  - `<T>`: 제네릭타입 T를 사용하겠다
+  - `T[]`: T를 첫번째 인자 Array에서 찾는다
+  - `T`: T의 타입이 확정되면 이후에 T는 해당 타입으로 call signature을 생성한다
+  - 제너릭타입이 선언된 후 처음 제너릭을 사용할 때 해당 타입을 유추한다
+- 여러 Generic Type 사용하기
+  - `T`, `M`, `V`
+  ```typescript
+  type SuperPrint = <T,M>(a: T[], b: M) => T
+  ```
 ## 0.4.3 Generics
